@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<!-- iOS, Android, MacCatalyst -->
+		<TargetFrameworks>net6.0-ios;net6.0-android;</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<RootNamespace>MAUIProjectWithRenderer</RootNamespace>
+
+		<!-- Display name -->
+		<ApplicationTitle>MAUIProjectWithRenderer</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.MAUIProjectWithRenderer</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationVersion>1.0</ApplicationVersion>
+		<AndroidVersionCode>1</AndroidVersionCode>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-ios'))">iossimulator-x64</RuntimeIdentifier>
+		<UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
+	</PropertyGroup>
+	<Import Project="..\targets\MultiTargeting.targets" />
+	<ItemGroup>
+	  <None Remove="Platforms\MyButton.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="MyButton.cs" />
+	  <None Include="Platforms\iOS\MyButtonRenderer.cs" />
+	</ItemGroup>
+	<ItemGroup>
+	  <_MauiCompileToAdd Remove="Platforms\iOS\MyButtonRenderer.cs" />
+	</ItemGroup>
+</Project>

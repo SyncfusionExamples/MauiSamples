@@ -1,0 +1,13 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProjectWithRenderer.MainPage"
+             xmlns:button="clr-namespace:CustomRenderer"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <Grid>
+        <button:MyButton Text="I am Custom Renderer Button from MAUI"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         WidthRequest="300"
+                         HeightRequest="50"/>
+    </Grid>
+</ContentPage>
