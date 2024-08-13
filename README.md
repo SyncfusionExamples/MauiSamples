@@ -6,7 +6,8 @@ This repository contains samples for MAUI
 <Grid>
     <button:MyButton Text="Custom Renderer Button from MAUI"
         VerticalOptions="Center"
-        HorizontalOptions="Center"                 WidthRequest="300"
+        HorizontalOptions="Center"                 
+        WidthRequest="300"
         HeightRequest="50"/>
 </Grid>
 ```
