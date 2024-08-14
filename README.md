@@ -1,10 +1,10 @@
 # Maui Samples
-This repository contains samples for MAUI
+This repository contains samples for MAUI control. Refere the below code changes to add a Button control in .NET MAUI
 
 **XAML**
 ```
 <Grid>
-    <button:MyButton Text="Custom Renderer Button from MAUI"
+    <Button Text="Custom Renderer Button from MAUI"
         VerticalOptions="Center"
         HorizontalOptions="Center"                 
         WidthRequest="300"
@@ -17,7 +17,7 @@ This repository contains samples for MAUI
 public Mainpage()
 {            
     var grid = new Grid();        
-    var customButton = new button.MyButton
+    var customButton = new Button
     {
         Text = "Custom Renderer Button from MAUI",
         VerticalOptions = LayoutOptions.Center,
